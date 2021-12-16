@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap");
+
+$DM-serif: "DM Serif Display", serif;
+$Karla: "Karla", sans-serif;
+
+$Dark-Violet: hsl(256, 26%, 20%);
+$Grayish-Blue: hsl(216, 30%, 68%);
+$Very-Dark-Violet: hsl(270, 9%, 17%);
+$Dark-Grayish-Violet: hsl(273, 4%, 51%);
+$Very-Light-Gray: hsl(0, 0%, 98%);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin maximum-w {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@mixin padding-20 {
+  padding: 20px;
+}
+
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+/* General stylings end */
+
+header {
+  height: 80px;
+
+  nav {
+    @include maximum-w();
+    @include padding-20();
+    @include flex();
+
+    ul {
+      display: flex;
+
+      li {
+        list-style-type: none;
+
+        a {
+          margin: 15px;
+          text-decoration: none;
+          font-family: $Karla;
+          font-size: 13px;
+          font-weight: 700;
+          color: $Dark-Grayish-Violet;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          line-height: 40px;
+
+          &:hover {
+            color: $Dark-Violet;
+          }
+        }
+      }
+
+      button {
+        margin-left: 15px;
+        background-color: transparent;
+        cursor: pointer;
+        font-family: $Karla;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 10px 20px;
+        border: 1px solid $Dark-Violet;
+        transition: all 0.5s;
+
+        &:hover {
+          background-color: $Dark-Violet;
+          color: $Very-Light-Gray;
+        }
+      }
+    }
+  }
+}
+
+/* Header stylings end */
+
+.hero {
+  height: 600px;
+  background-color: $Dark-Violet;
+
+  .hero-container {
+    @include maximum-w();
+    @include flex();
+    gap: 50px;
+
+    .hero-col-1 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+      margin-bottom: 130px;
+
+      hr {
+        height: 2px;
+        width: 150px;
+        margin-bottom: 30px;
+      }
+
+      h1 {
+        font-family: $DM-serif;
+        font-size: 72px;
+        line-height: 64px;
+        color: $Very-Light-Gray;
+        font-weight: 400;
+      }
+
+      p {
+        font-family: $Karla;
+        font-size: 16px;
+        line-height: 26px;
+        color: $Very-Light-Gray;
+        font-weight: 400;
+      }
+
+      button {
+        background-color: transparent;
+        cursor: pointer;
+        font-family: $Karla;
+        color: $Very-Light-Gray;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 10px 20px;
+        border: 1px solid $Very-Light-Gray;
+        transition: all 0.5s;
+
+        &:hover {
+          background-color: $Very-Light-Gray;
+          color: $Dark-Violet;
+        }
+      }
+    }
+
+    .hero-col-2 {
+      img {
+        margin-top: 100px;
+      }
+    }
+  }
+}
+
+/* Media Queries */
+
+@import "_media";
